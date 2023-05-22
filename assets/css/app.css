@@ -1,0 +1,109 @@
+html {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	background: #161616;
+}
+
+a,
+.fa-question-circle {
+	text-decoration: none;
+}
+
+.btn,
+.nav-link,
+.dropdown-menu,
+.dropdown-item,
+.modal-content {
+	border-radius: 0;
+}
+
+.navbar {
+	background: #161616;
+	margin-bottom: 0;
+}
+
+.modal-title path,
+.navbar path {
+	fill: white;
+}
+
+#settings-icon {
+	fill: black;
+}
+
+.modal-content {
+	border: 1px solid #fff;
+}
+
+.modal-header {
+	background-color: #24ab48;
+	border-bottom: #000;
+	color: white;
+}
+
+.modal-body,
+.modal-footer {
+	background-color: #000;
+	color: #ffffff;
+}
+
+.alert {
+	background-color: rgb(66, 133, 244);
+	background-color: rgba(66, 133, 244, 0.5);
+	color: #ffffff;
+	margin: 1.5rem auto;
+	width: 90%;
+}
+
+#gradientbtn {
+	background-color: #9966ff;
+	color: #ffffff;
+}
+
+#totPop,
+#perCapita,
+#women,
+#juveniles,
+#occupancy {
+	background-color: #9966ff;
+	color: #ffffff;
+	margin: 5px;
+	padding: 10px;
+}
+
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: url(../images/down-arrow.png) no-repeat #24ab48;
+	background-color: #000;
+	background-position: 95%;
+	border: 1px solid #24ab48;
+	border-radius: 0;
+	color: white;
+	cursor: pointer;
+	font-size: 16px;
+	overflow: hidden;
+	padding: 0.5rem;
+	width: 100%;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+.table {
+	color: #ddd;
+}
+
+th {
+	color: #fff;
+	font-size: 16px;
+}
+
+.zc-ref {
+	display: none;
+}
