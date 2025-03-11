@@ -5,4 +5,4 @@ using ZingChart JS.
 
 ## Preview
 
-![Preview Image](https://img.cleberg.net/world-incarceration/world-incarceration.png)
+![Preview Image](https://img.cmc.pub/world-incarceration/world-incarceration.png)
