@@ -104,6 +104,20 @@ th {
 	font-size: 16px;
 }
 
-.zc-ref {
-	display: none;
+#map-container {
+	height: calc(100vh - 56px);
+	width: 100%;
+	background: #161616;
+}
+
+.map-tooltip {
+	position: absolute;
+	background: #1a1a1a;
+	color: #fff;
+	padding: 8px 12px;
+	border: 1px solid #24ab48;
+	border-radius: 0;
+	pointer-events: none;
+	font-size: 13px;
+	opacity: 0;
 }
