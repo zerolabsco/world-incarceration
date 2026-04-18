@@ -120,4 +120,26 @@ th {
 	pointer-events: none;
 	font-size: 13px;
 	opacity: 0;
+	transition: opacity 0.1s;
+	z-index: 9999;
+}
+
+/* chart containers inside graph modal */
+#myChart2,
+#myNextChart {
+	min-height: 300px;
+	background: #000;
+}
+
+/* active metric button highlight */
+.active-metric {
+	outline: 2px solid #fff;
+}
+
+/* D3 axis lines */
+#myChart2 .domain,
+#myNextChart .domain,
+#myChart2 .tick line,
+#myNextChart .tick line {
+	stroke: #555;
 }

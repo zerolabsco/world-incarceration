@@ -10,6 +10,7 @@ const NO_DATA_FILL = "#444";
 let svg, mapGroup, projection, pathGen, features;
 let _countries, _isoLookup;
 let _clickHandler = null;
+let _labelsVisible = false;
 
 export async function initMap(container, countries, isoLookup) {
 	_countries = countries;
@@ -43,7 +44,31 @@ export async function initMap(container, countries, isoLookup) {
 			if (_clickHandler) _clickHandler(event, d);
 		});
 
+	// Country name labels, hidden by default
+	mapGroup.selectAll("text.country-label")
+		.data(features)
+		.join("text")
+		.attr("class", "country-label")
+		.attr("transform", d => {
+			const [x, y] = pathGen.centroid(d);
+			return isNaN(x) || isNaN(y) ? "translate(-9999,-9999)" : `translate(${x},${y})`;
+		})
+		.attr("text-anchor", "middle")
+		.attr("dy", "0.35em")
+		.style("font-size", "7px")
+		.style("fill", "#fff")
+		.style("pointer-events", "none")
+		.style("display", "none")
+		.text(d => {
+			const alpha3 = _isoLookup[+d.id];
+			return alpha3 && _countries[alpha3] ? _countries[alpha3].country : "";
+		});
+
 	return { svg, mapGroup, projection };
+}
+
+export function getCountryPaths() {
+	return mapGroup.selectAll("path.country");
 }
 
 export function applyGradient(metricKey) {
@@ -67,6 +92,12 @@ export function resetGradient() {
 		.transition()
 		.duration(400)
 		.attr("fill", d => _fillForFeature(d, null, null));
+}
+
+export function toggleLabels() {
+	_labelsVisible = !_labelsVisible;
+	mapGroup.selectAll("text.country-label")
+		.style("display", _labelsVisible ? "block" : "none");
 }
 
 export function setClickHandler(fn) {
